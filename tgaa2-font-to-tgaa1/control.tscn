@@ -1,0 +1,103 @@
+[gd_scene load_steps=7 format=3 uid="uid://6d70fnbwn66x"]
+
+[ext_resource type="Script" uid="uid://dfq2d7rfvy6fq" path="res://control.gd" id="1_0fbet"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0fbet"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_62e2m"]
+Panel/styles/panel = SubResource("StyleBoxFlat_0fbet")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62e2m"]
+bg_color = Color(0.00269147, 0.228404, 0.871679, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtu10"]
+bg_color = Color(0.000958813, 0.103233, 0.463723, 1)
+
+[sub_resource type="Theme" id="Theme_ee4bf"]
+Button/styles/normal = SubResource("StyleBoxFlat_62e2m")
+Button/styles/pressed = SubResource("StyleBoxFlat_qtu10")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0fbet")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_62e2m")
+
+[node name="BtnInput" type="Button" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 13.0
+offset_right = 219.0
+offset_bottom = 36.0
+theme = SubResource("Theme_ee4bf")
+text = "Seleccionar GFD de
+TGAA2"
+
+[node name="BtnLike" type="Button" parent="."]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 13.0
+offset_right = 434.0
+offset_bottom = 36.0
+theme = SubResource("Theme_ee4bf")
+text = "Seleccionar GFD de
+referencia de TGAA1"
+
+[node name="BtnOutput" type="Button" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 67.0
+offset_right = 219.0
+offset_bottom = 90.0
+theme = SubResource("Theme_ee4bf")
+text = "Guardar GFD de TGAA1
+"
+
+[node name="BtnConvert" type="Button" parent="."]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 67.0
+offset_right = 434.0
+offset_bottom = 90.0
+theme = SubResource("Theme_ee4bf")
+text = "Convertir Archivo
+"
+
+[node name="StatusLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 97.0
+offset_right = 438.0
+offset_bottom = 120.0
+text = "Status"
+horizontal_alignment = 1
+
+[node name="InputFileDialog" type="FileDialog" parent="."]
+title = "Open a File"
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+
+[node name="LikeFileDialog" type="FileDialog" parent="."]
+auto_translate_mode = 1
+title = "Open a File"
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+
+[node name="OutputFileDialog" type="FileDialog" parent="."]
+auto_translate_mode = 1
+access = 2
